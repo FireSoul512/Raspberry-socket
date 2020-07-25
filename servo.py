@@ -5,7 +5,7 @@ import time
 GPIO.setup(11,GPIO.out)
 servo = GPIO.PWM(11,50)
 
-def mover(self)
+def mover()
     servo.start(0)
     servo.ChangeDutyCucle(12)
     time.sleep(0.5)
