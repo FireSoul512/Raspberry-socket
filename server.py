@@ -11,14 +11,14 @@ while ciclo:
     conexion, addr = s.accept()
     print("Nueva conexion",addr)
     msg = conexion.recv(1024)
-    mensaje = "Te manda saludos la rasp"
-    conexion.send(bytes(mensaje,'utf-8'))
-    conexion.close()
     if msg.decode("utf-8") == "SALIR":
         ciclo = False
     if msg.decode("utf-8") == "SERVO":
         #serv = SERVO()
         #serv.mover()
         print("Entra al servo XD")
+    mensaje = "Te manda saludos la rasp"
+    conexion.send(bytes(mensaje,'utf-8'))
+    conexion.close()
 
 print('Adios bro XD')
