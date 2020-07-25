@@ -14,7 +14,7 @@ class SERVO:
         servo = GPIO.PWM(11,50)
 
         servo.start(0)
-        servo.ChangeDutyCucle(12)
+        servo.ChangeDutyCycle(12)
         time.sleep(0.5)
         servo.ChangeDutyCucle(0)
 
