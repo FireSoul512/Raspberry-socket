@@ -16,8 +16,8 @@ while ciclo:
     if msg.decode("utf-8") == "SALIR":
         ciclo = False
     if msg.decode("utf-8") == "SERVO":
-        serv = SERVO()
-        serv.mover()
+        #serv = SERVO()
+        #serv.mover()
         print("Entra al servo XD")
 
 print('Adios bro XD')
