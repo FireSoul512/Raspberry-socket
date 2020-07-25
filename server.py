@@ -10,7 +10,6 @@ print('Para cerrar el server el cliente tiene que introducir SALIR')
 while ciclo:
     conexion, addr = s.accept()
     print("Nueva conexion",addr)
-    print(addr)
     conexion.send(bytes("Hola como estas", "utf-8"))
     msg = conexion.recv(1024)
     conexion.close()
