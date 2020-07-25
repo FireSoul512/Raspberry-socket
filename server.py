@@ -11,7 +11,7 @@ while ciclo:
     conexion, addr = s.accept()
     print("Nueva conexion",addr)
     msg = conexion.recv(1024)
-    conexion.send(bytes("Hola como estas", "utf-8"))
+    conexion.send(bytes("Te manda saludos la rasp","utf-8"))
     conexion.close()
     if msg.decode("utf-8") == "SALIR":
         ciclo = False
