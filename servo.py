@@ -2,7 +2,7 @@
 import RPi.GPIO as GPIO
 import time
 
-GPIO.setup(11,GPIO.out)
+GPIO.setup(11,GPIO.OUT)
 servo = GPIO.PWM(11,50)
 
 def mover(self):
