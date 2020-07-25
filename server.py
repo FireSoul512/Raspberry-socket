@@ -2,7 +2,7 @@ import socket
 from servo import SERVO
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-s.bind( ('localhost',7080) )
+s.bind( ('192.168.1.71',7080) )
 s.listen(5)
 ciclo = True
 print('Para cerrar el server el cliente tiene que introducir SALIR')
