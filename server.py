@@ -12,7 +12,7 @@ while ciclo:
     print("Nueva conexion",addr)
     msg = conexion.recv(1024)
     mensaje = "Te manda saludos la rasp"
-    conexion.send(bytes(mensaje,"utf-8"))
+    conexion.send(bytes(mensaje,'utf-8'))
     conexion.close()
     if msg.decode("utf-8") == "SALIR":
         ciclo = False
