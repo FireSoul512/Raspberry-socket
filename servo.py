@@ -1,15 +1,18 @@
 #!/usr/bin/env python3
-import RPi.GPIO as GPIO
-import time
 
-GPIO.setmode(GPIO.BOARD)
-
-GPIO.setup(11,GPIO.OUT)
-servo = GPIO.PWM(11,50)
 
 class SERVO:
 
     def mover(self):
+
+        import RPi.GPIO as GPIO
+        import time
+
+        GPIO.setmode(GPIO.BOARD)
+
+        GPIO.setup(11,GPIO.OUT)
+        servo = GPIO.PWM(11,50)
+
         servo.start(0)
         servo.ChangeDutyCucle(12)
         time.sleep(0.5)
