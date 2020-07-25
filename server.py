@@ -22,3 +22,4 @@ while ciclo:
     conexion.close()
 
 print('Adios bro XD')
+s.close()
