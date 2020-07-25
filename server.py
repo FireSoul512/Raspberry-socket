@@ -1,5 +1,5 @@
 import socket
-from servo import SERVO
+#from servo import SERVO
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.bind( ('192.168.1.71',7080) )
