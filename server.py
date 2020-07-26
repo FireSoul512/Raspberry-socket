@@ -23,7 +23,6 @@ try:
         elif msg.decode("utf-8") == "PESO":
             pes = PESO()
             mensaje = pes.obtener()
-            print(mensaje)
             conexion.send(bytes(str(mensaje),'utf-8'))
             #if mensaje:
             #    mensaje = "Error al obtener peso"
