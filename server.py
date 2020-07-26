@@ -40,7 +40,7 @@ try:
     s.close()
 
 except (KeyboardInterrupt):
-print('Adios')
+    print('Adios')
 
 finally:
     s.close()
