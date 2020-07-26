@@ -15,10 +15,6 @@ if os.path.isfile(swap_file_name):
     
     peso = int(hx.get_weight_mean(20))
     print(peso,"g")
-    #if peso < 0:
-    #    print("0g")
-    #else:
-    #    print(peso, 'g')
     
 else:
     print("No hay datos cargados, porfavor ejecutar la app para guardarlos ;v")
