@@ -60,4 +60,5 @@ except (KeyboardInterrupt, SystemExit):
     print('Bye :)')
 
 finally:
+    print('Bye :)')
     GPIO.cleanup()
