@@ -24,7 +24,7 @@ while ciclo:
         mensaje = pes.obtener
         if mensaje:
             mensaje = "Error al obtener peso"
-            print(mensaje)
+            conexion.send(bytes(mensaje,'utf-8'))
         else:
             conexion.send(bytes(mensaje,'utf-8'))
 
