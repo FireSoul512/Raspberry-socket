@@ -23,11 +23,12 @@ while ciclo:
         pes = PESO()
         mensaje = pes.obtener()
         print(mensaje)
-        if mensaje:
-            mensaje = "Error al obtener peso"
-            conexion.send(bytes(mensaje,'utf-8'))
-        else:
-            conexion.send(bytes(str(mensaje),'utf-8'))
+        conexion.send(bytes(str(mensaje),'utf-8'))
+        #if mensaje:
+        #    mensaje = "Error al obtener peso"
+        #    conexion.send(bytes(mensaje,'utf-8'))
+        #else:
+        #    conexion.send(bytes(str(mensaje),'utf-8'))
 
     else:
         mensaje = "Te manda saludos la rasp"
