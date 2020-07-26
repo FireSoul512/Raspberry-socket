@@ -21,7 +21,7 @@ while ciclo:
 
     elif msg.decode("utf-8") == "PESO":
         pes = PESO()
-        mensaje = pes.obtener
+        mensaje = pes.obtener()
         if mensaje:
             mensaje = "Error al obtener peso"
             conexion.send(bytes(mensaje,'utf-8'))
