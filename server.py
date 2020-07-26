@@ -16,6 +16,10 @@ def comprobarConexionUno():
         except error:
             time.sleep(5)
 
+serv = SERVO()
+serv.start()
+
+time.sleep(10)
 conexionUno = comprobarConexionUno()
 print(conexionUno)
 
