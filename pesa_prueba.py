@@ -22,6 +22,4 @@ if os.path.isfile(swap_file_name):
 else:
     print("No hay datos cargados, porfavor ejecutar la app para guardarlos ;v")
 
-print('Bye :)')
-
 GPIO.cleanup()
