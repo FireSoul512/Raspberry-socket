@@ -19,7 +19,7 @@ def comprobarConexionUno():
 serv = SERVO()
 serv.start()
 
-time.sleep(10)
+time.sleep(30)
 conexionUno = comprobarConexionUno()
 print(conexionUno)
 
