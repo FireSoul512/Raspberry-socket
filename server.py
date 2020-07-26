@@ -39,7 +39,7 @@ try:
     print('Adios bro XD')
     s.close()
 
-except (KeyboardInterrupt, SystemExit):
+except (KeyboardInterrupt):
 print('Adios')
 
 finally:
