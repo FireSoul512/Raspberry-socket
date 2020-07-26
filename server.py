@@ -8,32 +8,39 @@ s.listen(5)
 ciclo = True
 print('Para cerrar el server el cliente tiene que introducir SALIR')
 
-while ciclo:
-    conexion, addr = s.accept()
-    print("Nueva conexion",addr)
-    msg = conexion.recv(1024)
-    if msg.decode("utf-8") == "SERVO":
-        serv = SERVO()
-        serv.mover()
-        print("Entra al servo XD")
-        mensaje = "Te manda saludos la rasp"
-        conexion.send(bytes(mensaje,'utf-8'))
+try:
+    while ciclo:
+        conexion, addr = s.accept()
+        print("Nueva conexion",addr)
+        msg = conexion.recv(1024)
+        if msg.decode("utf-8") == "SERVO":
+            serv = SERVO()
+            serv.mover()
+            print("Entra al servo XD")
+            mensaje = "Te manda saludos la rasp"
+            conexion.send(bytes(mensaje,'utf-8'))
 
-    elif msg.decode("utf-8") == "PESO":
-        pes = PESO()
-        mensaje = pes.obtener()
-        print(mensaje)
-        conexion.send(bytes(str(mensaje),'utf-8'))
-        #if mensaje:
-        #    mensaje = "Error al obtener peso"
-        #    conexion.send(bytes(mensaje,'utf-8'))
-        #else:
-        #    conexion.send(bytes(str(mensaje),'utf-8'))
+        elif msg.decode("utf-8") == "PESO":
+            pes = PESO()
+            mensaje = pes.obtener()
+            print(mensaje)
+            conexion.send(bytes(str(mensaje),'utf-8'))
+            #if mensaje:
+            #    mensaje = "Error al obtener peso"
+            #    conexion.send(bytes(mensaje,'utf-8'))
+            #else:
+            #    conexion.send(bytes(str(mensaje),'utf-8'))
 
-    else:
-        mensaje = "Te manda saludos la rasp"
-        conexion.send(bytes(mensaje,'utf-8'))
-    conexion.close()
+        else:
+            mensaje = "Te manda saludos la rasp"
+            conexion.send(bytes(mensaje,'utf-8'))
+        conexion.close()
 
-print('Adios bro XD')
-s.close()
+    print('Adios bro XD')
+    s.close()
+
+except (KeyboardInterrupt, SystemExit):
+print('Adios')
+
+finally:
+    s.close()
