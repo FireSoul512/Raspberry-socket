@@ -1,5 +1,6 @@
 import socket
 from servo import SERVO
+from peso import PESO
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.bind( ('192.168.1.71',7080) )
@@ -15,8 +16,20 @@ while ciclo:
         serv = SERVO()
         serv.mover()
         print("Entra al servo XD")
-    mensaje = "Te manda saludos la rasp"
-    conexion.send(bytes(mensaje,'utf-8'))
+        mensaje = "Te manda saludos la rasp"
+        conexion.send(bytes(mensaje,'utf-8'))
+
+    elif msg.decode("utf-8") == "PESO":
+        pes = PESO()
+        mensaje = pes.obtener
+        if mensaje:
+            mensaje = "Error al obtener peso"
+        else:
+            conexion.send(bytes(mensaje,'utf-8'))
+
+    else:
+        mensaje = "Te manda saludos la rasp"
+        conexion.send(bytes(mensaje,'utf-8'))
     conexion.close()
 
 print('Adios bro XD')
