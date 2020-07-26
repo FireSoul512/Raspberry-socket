@@ -4,7 +4,7 @@ import socket
 ciclo = True
 while ciclo:
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    s.connect( ('189.148.85.148',7080) )
+    s.connect( ('192.168.1.71',7080) )
     mensaje = input('Introduce el mensaje >>  ')
     print()
     s.send(bytes(mensaje, "utf-8"))
