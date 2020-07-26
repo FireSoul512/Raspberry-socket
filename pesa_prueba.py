@@ -74,4 +74,9 @@ try:
     # subtracted by offset and converted by scale ratio to
     # desired units. In my case in grams.}
     print(hx.get_weight_mean(20), 'g')
+
+except (KeyboardInterrupt, SystemExit):
+    print('Bye :)')
+
+finally:
     GPIO.cleanup()
