@@ -24,7 +24,7 @@ try:
             pes = PESO()
             mensaje = pes.obtener()
             print(mensaje)
-            conexion.send(bytes(str(mensaje),'utf-8'))
+            conexion.send(bytes(mensaje,'utf-8'))
             #if mensaje:
             #    mensaje = "Error al obtener peso"
             #    conexion.send(bytes(mensaje,'utf-8'))
@@ -40,6 +40,7 @@ try:
     s.close()
 
 except (KeyboardInterrupt):
+    print()
     print('Adios')
 
 finally:
