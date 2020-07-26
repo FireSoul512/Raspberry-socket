@@ -11,14 +11,19 @@ class PESO:
         hx = HX711(dout_pin=5, pd_sck_pin=6)
 
         swap_file_name = 'swap_file.swp'
-        if os.path.isfile(swap_file_name):
-            with open(swap_file_name, 'rb') as swap_file:
-                hx = pickle.load(swap_file)
-            peso = int(hx.get_weight_mean(20))
+        try:
+            if os.path.isfile(swap_file_name):
+                with open(swap_file_name, 'rb') as swap_file:
+                    hx = pickle.load(swap_file)
+                peso = int(hx.get_weight_mean(20))
+                GPIO.cleanup()
+                return peso
+                
+            else:
+                GPIO.cleanup()
+                XD = int(-500)
+                return XD
+        except error:
             GPIO.cleanup()
-            return peso
-            
-        else:
-            GPIO.cleanup()
-            XD = int(-500)
+            XD = int(-50)
             return XD
