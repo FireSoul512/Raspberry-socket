@@ -21,6 +21,5 @@ class PESO:
             return peso
             
         else:
-            print("No hay datos cargados, porfavor ejecutar la app para guardarlos ;v")
             GPIO.cleanup()
-            return True
+            return "No hay datos cargados, porfavor ejecutar la app para guardarlos ;v"
