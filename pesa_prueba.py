@@ -9,7 +9,8 @@ try:
         raise ValueError('Tare is unsuccessful.')
     reading = float(-957009)
     value = float(34)
-    print(reading)
+    reading = hx.get_data_mean()
+    print("Nuevo reading ", reading)
     print(value)
     ratio = reading / value
     hx.set_scale_ratio(ratio)
