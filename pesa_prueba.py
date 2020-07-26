@@ -13,11 +13,12 @@ if os.path.isfile(swap_file_name):
     with open(swap_file_name, 'rb') as swap_file:
         hx = pickle.load(swap_file)
     
-    peso = hx.get_weight_mean(20)
-    if peso < 0:
-        print("0g")
-    else:
-        print(peso, 'g')
+    peso = int(hx.get_weight_mean(20))
+    print(peso,"g")
+    #if peso < 0:
+    #    print("0g")
+    #else:
+    #    print(peso, 'g')
     
 else:
     print("No hay datos cargados, porfavor ejecutar la app para guardarlos ;v")
