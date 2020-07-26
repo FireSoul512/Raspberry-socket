@@ -37,9 +37,9 @@ try:
         if msg.decode("utf-8") == "SERVO":
             serv = SERVO()
             serv.mover()
-            print("Entra al servo XD")
-            mensaje = "Te manda saludos la rasp"
-            conexion.send(bytes(mensaje,'utf-8'))
+            pes = PESO()
+            mensaje = pes.obtener()
+            conexion.send(bytes(str(mensaje),'utf-8'))
 
         elif msg.decode("utf-8") == "PESO":
             pes = PESO()
@@ -49,6 +49,7 @@ try:
         else:
             mensaje = "Te manda saludos la rasp"
             conexion.send(bytes(mensaje,'utf-8'))
+            
         conexion.close()
 
     print('Adios bro XD')
