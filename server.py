@@ -58,7 +58,7 @@ try:
 
 except (KeyboardInterrupt):
     print()
-    print('Adios')
+    print('gloria a Adios')
 
 finally:
     s.close()
