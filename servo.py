@@ -33,15 +33,15 @@ class SERVO:
         servo.start(0)
         veces = int(3)
         while veces > 0:
-            veces = veces + 1
-            servo.ChangeDutyCycle(12)
-            time.sleep(0.5)
+            veces = veces - 1
+            servo.ChangeDutyCycle(5)
+            time.sleep(0.2)
             servo.ChangeDutyCycle(0)
 
-            time.sleep(2)
+            time.sleep(0.2)
 
             servo.ChangeDutyCycle(2)
-            time.sleep(0.5)
+            time.sleep(0.2)
             servo.ChangeDutyCycle(0)
 
         servo.stop()
