@@ -14,12 +14,15 @@ def comprobarConexionUno():
             ciclo = False
             return "Hay conexión a internet..."
         except error:
+            print("No ha conectado")
             time.sleep(5)
 
 serv = SERVO()
 serv.start()
 
+time.sleep(30)
 conexionUno = comprobarConexionUno()
+print(conexionUno)
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.bind( ('192.168.1.71',7080) )
@@ -28,7 +31,7 @@ ciclo = True
 print('Para cerrar el server el cliente tiene que introducir SALIR')
 
 try:
-    while True:
+    while ciclo:
         conexion, addr = s.accept()
         print("Nueva conexion",addr)
         msg = conexion.recv(1024)
@@ -50,9 +53,10 @@ try:
             
         conexion.close()
 
+
 except (KeyboardInterrupt):
-    s.close()
     print()
+    s.close()
     print('gloria a Adios')
 
 finally:
