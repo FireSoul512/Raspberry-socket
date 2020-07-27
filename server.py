@@ -28,7 +28,7 @@ ciclo = True
 print('Para cerrar el server el cliente tiene que introducir SALIR')
 
 try:
-    while ciclo:
+    while True:
         conexion, addr = s.accept()
         print("Nueva conexion",addr)
         msg = conexion.recv(1024)
@@ -49,8 +49,6 @@ try:
             conexion.send(bytes(mensaje,'utf-8'))
             
         conexion.close()
-
-    print('Adios bro XD')
 
 except (KeyboardInterrupt):
     s.close()
