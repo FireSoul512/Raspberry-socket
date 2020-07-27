@@ -10,7 +10,7 @@ class PESO:
         GPIO.setmode(GPIO.BCM)
         hx = HX711(dout_pin=5, pd_sck_pin=6)
 
-        swap_file_name = 'home/pi/git/Raspberry-socket/swap_file.swp'
+        swap_file_name = '/home/pi/git/Raspberry-socket/swap_file.swp'
         try:
             if os.path.isfile(swap_file_name):
                 with open(swap_file_name, 'rb') as swap_file:
