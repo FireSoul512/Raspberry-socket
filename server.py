@@ -14,6 +14,7 @@ def comprobarConexionUno():
             ciclo = False
             return "Hay conexión a internet..."
         except error:
+            print("No ha conectado")
             time.sleep(5)
 
 serv = SERVO()
@@ -25,7 +26,7 @@ print(conexionUno)
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.bind( ('192.168.1.71',7080) )
-s.listen(5)
+s.listen(1)
 ciclo = True
 print('Para cerrar el server el cliente tiene que introducir SALIR')
 
